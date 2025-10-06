@@ -1,0 +1,34 @@
+    CIOBANOIU Maria - 314CC
+	Implementarea temei s-a realizat modularizat, fiind folosite fisiere
+de tip header care contin diverse functii.
+	Functia init_page() are rolul de a initializa o pagina cu pagina implicita,
+functia init_tab() initializeaza un tab cu tabul implicit, iar functia init_browser()
+initializeaza browserul cu tabul implicit.
+	Functia new_tab() adauga un nou tab in lista de taburi, setandu-l ca tab curent.
+ID-ul este calculat prin incrementarea ID-ului ultimului tab adaugat.
+	Functia print() afiseaza ID-urile taburilor deschise incepand cu tabul curent in 
+ordine circulara, la final afisand descrierea paginii curente a tabului curent.
+	Functia close() elimina tabul curent din lista de taburi, setand ca tab curent 
+tabul anterior acestuia in lista circulara dublu inlantuita.
+	Functia open() acceseaza tabul cu ID-ul specificat din lista de taburi. In caz
+ca nu este gasit este afisat mesajul de eroare. 
+	Functiile next() si prev() deschid tabul urmator, respectiv anterior tabului 
+curent in lista de taburi.
+	Functia page() deschide in tabul curent pagina cu ID-ul specificat. In cazul
+in care pagina cu ID-ul respectiv nu exista este afisat mesajul de eroare. Pagina
+curenta va fi pusa in stiva Backward, iar stiva Forward va fi golita.
+	Functiile backward() si forward() acceseaza ultima pagina adaugata in stiva
+Backward, respectiv Forward. Daca stiva este goala este afisat mesajul de eroare.
+	Functia print_history() afiseaza URL-urile paginilor accesate in tabul cu ID-ul 
+specificat incepand cu paginile din stiva Forward, urmand pagina curenta, iar apoi
+cele din stiva Backward. Pentru aceasta functie este folosita o functie auxiliara,
+print_reversed(), folosita pentru a afisa o stiva in ordine inversa.
+	Functiile free_stack(), free_list() si free_browser() au rolul de a elibera
+memoria alocata.
+	In functia main(), dupa deschiderea fisierelor de intrare si iesire, este
+citit numarul de pagini, iar apoi sunt citite paginile (ID, URL, descriere).
+De asemenea, sunt citite numarul de comenzi si comenzile. In functie de
+comanda citita este apelata functia necesara. La finalul functiei este eliberata
+memoria alocata si sunt inchise fisierele.
+	Punctajul obtinut pe teste la rularea pe calculatorul propriu este 
+100/100 la teste si 19/20 la testul Valgrind.
